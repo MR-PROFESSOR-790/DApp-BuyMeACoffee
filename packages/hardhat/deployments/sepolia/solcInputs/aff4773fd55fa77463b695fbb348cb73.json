@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/BuyMeACoffee.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\n/* --------------------------------------------------------------------------\n   Minimal Ownable Implementation\n-------------------------------------------------------------------------- */\ncontract Ownable {\n    address private _owner;\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n\n    constructor(address initialOwner) {\n        _owner = initialOwner;\n        emit OwnershipTransferred(address(0), initialOwner);\n    }\n\n    modifier onlyOwner() {\n        require(msg.sender == _owner, \"Ownable: caller is not the owner\");\n        _;\n    }\n\n    function owner() public view returns (address) {\n        return _owner;\n    }\n\n    function transferOwnership(address newOwner) public onlyOwner {\n        require(newOwner != address(0), \"Ownable: new owner is the zero address\");\n        emit OwnershipTransferred(_owner, newOwner);\n        _owner = newOwner;\n    }\n}\n\n/* --------------------------------------------------------------------------\n   Minimal ReentrancyGuard Implementation\n-------------------------------------------------------------------------- */\ncontract ReentrancyGuard {\n    uint256 private _status;\n    uint256 private constant _NOT_ENTERED = 1;\n    uint256 private constant _ENTERED = 2;\n\n    constructor() {\n        _status = _NOT_ENTERED;\n    }\n\n    modifier nonReentrant() {\n        require(_status != _ENTERED, \"ReentrancyGuard: reentrant call\");\n        _status = _ENTERED;\n        _;\n        _status = _NOT_ENTERED;\n    }\n}\n\n/* --------------------------------------------------------------------------\n   BuyMeACoffee Contract\n-------------------------------------------------------------------------- */\ncontract BuyMeACoffee is Ownable, ReentrancyGuard {\n    // Event emitted when a new memo is recorded (now includes `amount`)\n    event NewMemo(\n        string name,\n        string message,\n        uint256 timestamp,\n        address indexed from,\n        uint256 amount\n    );\n\n    // Event emitted when the minimum coffee price is updated\n    event MinCoffeePriceUpdated(uint256 newPrice);\n\n    // Structure to store memo details for each donation (or coffee purchase)\n    struct Memo {\n        string name;\n        string message;\n        uint256 timestamp;\n        address from;\n        uint256 amount; // Donation amount in wei\n    }\n\n    // Array to store all memos received from supporters\n    Memo[] private memos;\n\n    // Minimum donation (coffee) price required (default set to 0.001 Ether)\n    uint256 public minCoffeePrice = 0.001 ether;\n\n    // Total amount donated via the contract (for record-keeping)\n    uint256 public totalDonations;\n\n    /**\n     * @notice Constructor: Initializes the Ownable contract with `msg.sender`.\n     *         ReentrancyGuard is automatically initialized.\n     */\n    constructor() Ownable(msg.sender) {}\n\n    /**\n     * @notice Donate (buy a coffee) and leave a memo for the owner.\n     * @param _name The name of the supporter.\n     * @param _message A message for the owner.\n     *\n     * Requirements:\n     * - The donation amount must be at least the minimum coffee price.\n     * - The function is protected against reentrancy.\n     *\n     * Note: The donated ETH is immediately forwarded to the owner, so the contract\n     *       does not hold the funds. However, the donation is recorded in memos along with its amount.\n     */\n    function buyCoffee(string calldata _name, string calldata _message)\n        external\n        payable\n        nonReentrant\n    {\n        require(\n            msg.value >= minCoffeePrice,\n            \"Donation amount is less than the minimum required\"\n        );\n\n        // Record the donation by storing a memo (including the `amount`)\n        memos.push(\n            Memo({\n                name: _name,\n                message: _message,\n                timestamp: block.timestamp,\n                from: msg.sender,\n                amount: msg.value\n            })\n        );\n\n        // Update total donations (using unchecked for slight gas savings)\n        unchecked {\n            totalDonations += msg.value;\n        }\n\n        // Forward the donation immediately to the owner\n        address _owner = owner();\n        (bool sent, ) = _owner.call{value: msg.value}(\"\");\n        require(sent, \"Failed to send Ether to the owner\");\n\n        // Emit event with the memo details (including `amount`)\n        emit NewMemo(_name, _message, block.timestamp, msg.sender, msg.value);\n    }\n\n    /**\n     * @notice Allows the owner to update the minimum donation (coffee) price.\n     * @param _newPrice The new minimum price (in wei) required to buy a coffee.\n     */\n    function updateMinCoffeePrice(uint256 _newPrice) external onlyOwner {\n        require(_newPrice > 0, \"Minimum price must be greater than zero\");\n        minCoffeePrice = _newPrice;\n        emit MinCoffeePriceUpdated(_newPrice);\n    }\n\n    /**\n     * @notice Retrieve all memos stored in the contract.\n     * @return An array of Memo structs.\n     */\n    function getMemos() external view returns (Memo[] memory) {\n        return memos;\n    }\n\n    /**\n     * @notice Returns the total amount donated (in wei).\n     * @return The total donations.\n     */\n    function getTotalDonations() external view returns (uint256) {\n        return totalDonations;\n    }\n\n    /**\n     * @notice Fallback function to accept ETH sent directly to the contract.\n     *         Automatically forwards the funds to the owner.\n     */\n    receive() external payable {\n        address _owner = owner();\n        (bool sent, ) = _owner.call{value: msg.value}(\"\");\n        require(sent, \"Failed to forward Ether\");\n    }\n\n    /**\n     * @notice Fallback function for calls with data.\n     *         Automatically forwards the funds to the owner.\n     */\n    fallback() external payable {\n        address _owner = owner();\n        (bool sent, ) = _owner.call{value: msg.value}(\"\");\n        require(sent, \"Failed to forward Ether\");\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "address": "0x3d162960820F4B9fb8447c8d4a0729A525510Dcc",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "MinCoffeePriceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "NewMemo",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_message",
+          "type": "string"
+        }
+      ],
+      "name": "buyCoffee",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getMemos",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct BuyMeACoffee.Memo[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTotalDonations",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minCoffeePrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalDonations",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateMinCoffeePrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x579fb0e72b5662d7f393550dfc44b6d0a0917d1ff359955a015d64c2edfdb054",
+  "receipt": {
+    "to": null,
+    "from": "0xdeFe84043EA9eC2E14747685d7295574b6bFbde7",
+    "contractAddress": "0x3d162960820F4B9fb8447c8d4a0729A525510Dcc",
+    "transactionIndex": 97,
+    "gasUsed": "828326",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000020000800000000000000000000000000000000400000002000000000000000000000000000000000000000000000000000000000001000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000004000000000000000000000000000000000000000000000000",
+    "blockHash": "0xae8f245ec5a066b6811ca4653c13c4c6ef92dd791abdcf2f9b9eeb71dd552c3b",
+    "transactionHash": "0x579fb0e72b5662d7f393550dfc44b6d0a0917d1ff359955a015d64c2edfdb054",
+    "logs": [
+      {
+        "transactionIndex": 97,
+        "blockNumber": 7983445,
+        "transactionHash": "0x579fb0e72b5662d7f393550dfc44b6d0a0917d1ff359955a015d64c2edfdb054",
+        "address": "0x3d162960820F4B9fb8447c8d4a0729A525510Dcc",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000defe84043ea9ec2e14747685d7295574b6bfbde7"
+        ],
+        "data": "0x",
+        "logIndex": 130,
+        "blockHash": "0xae8f245ec5a066b6811ca4653c13c4c6ef92dd791abdcf2f9b9eeb71dd552c3b"
+      }
+    ],
+    "blockNumber": 7983445,
+    "cumulativeGasUsed": "11731841",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "aff4773fd55fa77463b695fbb348cb73",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPrice\",\"type\":\"uint256\"}],\"name\":\"MinCoffeePriceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"NewMemo\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_message\",\"type\":\"string\"}],\"name\":\"buyCoffee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMemos\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"struct BuyMeACoffee.Memo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalDonations\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minCoffeePrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDonations\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_newPrice\",\"type\":\"uint256\"}],\"name\":\"updateMinCoffeePrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"buyCoffee(string,string)\":{\"params\":{\"_message\":\"A message for the owner. Requirements: - The donation amount must be at least the minimum coffee price. - The function is protected against reentrancy. Note: The donated ETH is immediately forwarded to the owner, so the contract       does not hold the funds. However, the donation is recorded in memos along with its amount.\",\"_name\":\"The name of the supporter.\"}},\"getMemos()\":{\"returns\":{\"_0\":\"An array of Memo structs.\"}},\"getTotalDonations()\":{\"returns\":{\"_0\":\"The total donations.\"}},\"updateMinCoffeePrice(uint256)\":{\"params\":{\"_newPrice\":\"The new minimum price (in wei) required to buy a coffee.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"buyCoffee(string,string)\":{\"notice\":\"Donate (buy a coffee) and leave a memo for the owner.\"},\"constructor\":{\"notice\":\"Constructor: Initializes the Ownable contract with `msg.sender`.         ReentrancyGuard is automatically initialized.\"},\"getMemos()\":{\"notice\":\"Retrieve all memos stored in the contract.\"},\"getTotalDonations()\":{\"notice\":\"Returns the total amount donated (in wei).\"},\"updateMinCoffeePrice(uint256)\":{\"notice\":\"Allows the owner to update the minimum donation (coffee) price.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/BuyMeACoffee.sol\":\"BuyMeACoffee\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/BuyMeACoffee.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.7;\\n\\n/* --------------------------------------------------------------------------\\n   Minimal Ownable Implementation\\n-------------------------------------------------------------------------- */\\ncontract Ownable {\\n    address private _owner;\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    constructor(address initialOwner) {\\n        _owner = initialOwner;\\n        emit OwnershipTransferred(address(0), initialOwner);\\n    }\\n\\n    modifier onlyOwner() {\\n        require(msg.sender == _owner, \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    function owner() public view returns (address) {\\n        return _owner;\\n    }\\n\\n    function transferOwnership(address newOwner) public onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        emit OwnershipTransferred(_owner, newOwner);\\n        _owner = newOwner;\\n    }\\n}\\n\\n/* --------------------------------------------------------------------------\\n   Minimal ReentrancyGuard Implementation\\n-------------------------------------------------------------------------- */\\ncontract ReentrancyGuard {\\n    uint256 private _status;\\n    uint256 private constant _NOT_ENTERED = 1;\\n    uint256 private constant _ENTERED = 2;\\n\\n    constructor() {\\n        _status = _NOT_ENTERED;\\n    }\\n\\n    modifier nonReentrant() {\\n        require(_status != _ENTERED, \\\"ReentrancyGuard: reentrant call\\\");\\n        _status = _ENTERED;\\n        _;\\n        _status = _NOT_ENTERED;\\n    }\\n}\\n\\n/* --------------------------------------------------------------------------\\n   BuyMeACoffee Contract\\n-------------------------------------------------------------------------- */\\ncontract BuyMeACoffee is Ownable, ReentrancyGuard {\\n    // Event emitted when a new memo is recorded (now includes `amount`)\\n    event NewMemo(\\n        string name,\\n        string message,\\n        uint256 timestamp,\\n        address indexed from,\\n        uint256 amount\\n    );\\n\\n    // Event emitted when the minimum coffee price is updated\\n    event MinCoffeePriceUpdated(uint256 newPrice);\\n\\n    // Structure to store memo details for each donation (or coffee purchase)\\n    struct Memo {\\n        string name;\\n        string message;\\n        uint256 timestamp;\\n        address from;\\n        uint256 amount; // Donation amount in wei\\n    }\\n\\n    // Array to store all memos received from supporters\\n    Memo[] private memos;\\n\\n    // Minimum donation (coffee) price required (default set to 0.001 Ether)\\n    uint256 public minCoffeePrice = 0.001 ether;\\n\\n    // Total amount donated via the contract (for record-keeping)\\n    uint256 public totalDonations;\\n\\n    /**\\n     * @notice Constructor: Initializes the Ownable contract with `msg.sender`.\\n     *         ReentrancyGuard is automatically initialized.\\n     */\\n    constructor() Ownable(msg.sender) {}\\n\\n    /**\\n     * @notice Donate (buy a coffee) and leave a memo for the owner.\\n     * @param _name The name of the supporter.\\n     * @param _message A message for the owner.\\n     *\\n     * Requirements:\\n     * - The donation amount must be at least the minimum coffee price.\\n     * - The function is protected against reentrancy.\\n     *\\n     * Note: The donated ETH is immediately forwarded to the owner, so the contract\\n     *       does not hold the funds. However, the donation is recorded in memos along with its amount.\\n     */\\n    function buyCoffee(string calldata _name, string calldata _message)\\n        external\\n        payable\\n        nonReentrant\\n    {\\n        require(\\n            msg.value >= minCoffeePrice,\\n            \\\"Donation amount is less than the minimum required\\\"\\n        );\\n\\n        // Record the donation by storing a memo (including the `amount`)\\n        memos.push(\\n            Memo({\\n                name: _name,\\n                message: _message,\\n                timestamp: block.timestamp,\\n                from: msg.sender,\\n                amount: msg.value\\n            })\\n        );\\n\\n        // Update total donations (using unchecked for slight gas savings)\\n        unchecked {\\n            totalDonations += msg.value;\\n        }\\n\\n        // Forward the donation immediately to the owner\\n        address _owner = owner();\\n        (bool sent, ) = _owner.call{value: msg.value}(\\\"\\\");\\n        require(sent, \\\"Failed to send Ether to the owner\\\");\\n\\n        // Emit event with the memo details (including `amount`)\\n        emit NewMemo(_name, _message, block.timestamp, msg.sender, msg.value);\\n    }\\n\\n    /**\\n     * @notice Allows the owner to update the minimum donation (coffee) price.\\n     * @param _newPrice The new minimum price (in wei) required to buy a coffee.\\n     */\\n    function updateMinCoffeePrice(uint256 _newPrice) external onlyOwner {\\n        require(_newPrice > 0, \\\"Minimum price must be greater than zero\\\");\\n        minCoffeePrice = _newPrice;\\n        emit MinCoffeePriceUpdated(_newPrice);\\n    }\\n\\n    /**\\n     * @notice Retrieve all memos stored in the contract.\\n     * @return An array of Memo structs.\\n     */\\n    function getMemos() external view returns (Memo[] memory) {\\n        return memos;\\n    }\\n\\n    /**\\n     * @notice Returns the total amount donated (in wei).\\n     * @return The total donations.\\n     */\\n    function getTotalDonations() external view returns (uint256) {\\n        return totalDonations;\\n    }\\n\\n    /**\\n     * @notice Fallback function to accept ETH sent directly to the contract.\\n     *         Automatically forwards the funds to the owner.\\n     */\\n    receive() external payable {\\n        address _owner = owner();\\n        (bool sent, ) = _owner.call{value: msg.value}(\\\"\\\");\\n        require(sent, \\\"Failed to forward Ether\\\");\\n    }\\n\\n    /**\\n     * @notice Fallback function for calls with data.\\n     *         Automatically forwards the funds to the owner.\\n     */\\n    fallback() external payable {\\n        address _owner = owner();\\n        (bool sent, ) = _owner.call{value: msg.value}(\\\"\\\");\\n        require(sent, \\\"Failed to forward Ether\\\");\\n    }\\n}\\n\",\"keccak256\":\"0xa169bcd702b2ddb7ddf7aca2dc947aa74d98fef0302604f67d2d707f0dd24ebe\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405266038d7ea4c6800060035534801561001b57600080fd5b50600080546001600160a01b031916339081178255604051909182917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a35060018055610cc4806100706000396000f3fe60806040526004361061007f5760003560e01c8063880c3a801161004e578063880c3a80146101c95780638da5cb5b146101df578063de2ed89314610207578063f2fde38b1461021d5761013e565b8063204206e114610150578063777c658f146101635780637e57fe5914610187578063865c5172146101a75761013e565b3661013e57600080546001600160a01b03165b90506000816001600160a01b03163460405160006040518083038185875af1925050503d80600081146100e1576040519150601f19603f3d011682016040523d82523d6000602084013e6100e6565b606091505b505090508061013c5760405162461bcd60e51b815260206004820152601760248201527f4661696c656420746f20666f727761726420457468657200000000000000000060448201526064015b60405180910390fd5b005b600080546001600160a01b0316610092565b61013c61015e366004610920565b61023d565b34801561016f57600080fd5b506004545b6040519081526020015b60405180910390f35b34801561019357600080fd5b5061013c6101a236600461098c565b610518565b3480156101b357600080fd5b506101bc61060d565b60405161017e91906109eb565b3480156101d557600080fd5b5061017460035481565b3480156101eb57600080fd5b506000546040516001600160a01b03909116815260200161017e565b34801561021357600080fd5b5061017460045481565b34801561022957600080fd5b5061013c610238366004610a99565b6107bd565b60026001540361028f5760405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606401610133565b60026001556003543410156103005760405162461bcd60e51b815260206004820152603160248201527f446f6e6174696f6e20616d6f756e74206973206c657373207468616e20746865604482015270081b5a5b9a5b5d5b481c995c5d5a5c9959607a1b6064820152608401610133565b6040805160c06020601f8701819004028201810190925260a081018581526002928291908890889081908501838280828437600092019190915250505090825250604080516020601f8701819004810282018101909252858152918101919086908690819084018382808284376000920182905250938552505042602080850191909152336040850152346060909401939093525083546001810185559381522081519192600502019081906103b69082610b68565b50602082015160018201906103cb9082610b68565b506040820151600282015560608201516003820180546001600160a01b0319166001600160a01b039283161790556080909201516004918201558054340190556000805490911690506000816001600160a01b03163460405160006040518083038185875af1925050503d8060008114610461576040519150601f19603f3d011682016040523d82523d6000602084013e610466565b606091505b50509050806104c15760405162461bcd60e51b815260206004820152602160248201527f4661696c656420746f2073656e6420457468657220746f20746865206f776e656044820152603960f91b6064820152608401610133565b336001600160a01b03167f6ff886cace6e462ab8ad73a45889187d83dcf628f4466a704b685cc47b7b2fe587878787423460405161050496959493929190610c51565b60405180910390a250506001805550505050565b6000546001600160a01b031633146105725760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610133565b600081116105d25760405162461bcd60e51b815260206004820152602760248201527f4d696e696d756d207072696365206d7573742062652067726561746572207468604482015266616e207a65726f60c81b6064820152608401610133565b60038190556040518181527f3e2623694efe135193106e707cb90a0871bd82b3667d6e4eaf7c2d2888009d819060200160405180910390a150565b60606002805480602002602001604051908101604052809291908181526020016000905b828210156107b457838290600052602060002090600502016040518060a001604052908160008201805461066490610adf565b80601f016020809104026020016040519081016040528092919081815260200182805461069090610adf565b80156106dd5780601f106106b2576101008083540402835291602001916106dd565b820191906000526020600020905b8154815290600101906020018083116106c057829003601f168201915b505050505081526020016001820180546106f690610adf565b80601f016020809104026020016040519081016040528092919081815260200182805461072290610adf565b801561076f5780601f106107445761010080835404028352916020019161076f565b820191906000526020600020905b81548152906001019060200180831161075257829003601f168201915b5050509183525050600282015460208083019190915260038301546001600160a01b031660408301526004909201546060909101529082526001929092019101610631565b50505050905090565b6000546001600160a01b031633146108175760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610133565b6001600160a01b03811661087c5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610133565b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b60008083601f8401126108e957600080fd5b50813567ffffffffffffffff81111561090157600080fd5b60208301915083602082850101111561091957600080fd5b9250929050565b6000806000806040858703121561093657600080fd5b843567ffffffffffffffff8082111561094e57600080fd5b61095a888389016108d7565b9096509450602087013591508082111561097357600080fd5b50610980878288016108d7565b95989497509550505050565b60006020828403121561099e57600080fd5b5035919050565b6000815180845260005b818110156109cb576020818501810151868301820152016109af565b506000602082860101526020601f19601f83011685010191505092915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015610a8b57603f19898403018552815160a08151818652610a38828701826109a5565b915050888201518582038a870152610a5082826109a5565b838a0151878b01526060808501516001600160a01b031690880152608093840151939096019290925250509386019390860190600101610a12565b509098975050505050505050565b600060208284031215610aab57600080fd5b81356001600160a01b0381168114610ac257600080fd5b9392505050565b634e487b7160e01b600052604160045260246000fd5b600181811c90821680610af357607f821691505b602082108103610b1357634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610b6357600081815260208120601f850160051c81016020861015610b405750805b601f850160051c820191505b81811015610b5f57828155600101610b4c565b5050505b505050565b815167ffffffffffffffff811115610b8257610b82610ac9565b610b9681610b908454610adf565b84610b19565b602080601f831160018114610bcb5760008415610bb35750858301515b600019600386901b1c1916600185901b178555610b5f565b600085815260208120601f198616915b82811015610bfa57888601518255948401946001909101908401610bdb565b5085821015610c185787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b608081526000610c6560808301888a610c28565b8281036020840152610c78818789610c28565b604084019590955250506060015294935050505056fea26469706673582212209fbc1b0c5f14e603b46577bb15982ec878006c2e756c69523d68adb7f6a9f3a764736f6c63430008140033",
+  "deployedBytecode": "0x60806040526004361061007f5760003560e01c8063880c3a801161004e578063880c3a80146101c95780638da5cb5b146101df578063de2ed89314610207578063f2fde38b1461021d5761013e565b8063204206e114610150578063777c658f146101635780637e57fe5914610187578063865c5172146101a75761013e565b3661013e57600080546001600160a01b03165b90506000816001600160a01b03163460405160006040518083038185875af1925050503d80600081146100e1576040519150601f19603f3d011682016040523d82523d6000602084013e6100e6565b606091505b505090508061013c5760405162461bcd60e51b815260206004820152601760248201527f4661696c656420746f20666f727761726420457468657200000000000000000060448201526064015b60405180910390fd5b005b600080546001600160a01b0316610092565b61013c61015e366004610920565b61023d565b34801561016f57600080fd5b506004545b6040519081526020015b60405180910390f35b34801561019357600080fd5b5061013c6101a236600461098c565b610518565b3480156101b357600080fd5b506101bc61060d565b60405161017e91906109eb565b3480156101d557600080fd5b5061017460035481565b3480156101eb57600080fd5b506000546040516001600160a01b03909116815260200161017e565b34801561021357600080fd5b5061017460045481565b34801561022957600080fd5b5061013c610238366004610a99565b6107bd565b60026001540361028f5760405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606401610133565b60026001556003543410156103005760405162461bcd60e51b815260206004820152603160248201527f446f6e6174696f6e20616d6f756e74206973206c657373207468616e20746865604482015270081b5a5b9a5b5d5b481c995c5d5a5c9959607a1b6064820152608401610133565b6040805160c06020601f8701819004028201810190925260a081018581526002928291908890889081908501838280828437600092019190915250505090825250604080516020601f8701819004810282018101909252858152918101919086908690819084018382808284376000920182905250938552505042602080850191909152336040850152346060909401939093525083546001810185559381522081519192600502019081906103b69082610b68565b50602082015160018201906103cb9082610b68565b506040820151600282015560608201516003820180546001600160a01b0319166001600160a01b039283161790556080909201516004918201558054340190556000805490911690506000816001600160a01b03163460405160006040518083038185875af1925050503d8060008114610461576040519150601f19603f3d011682016040523d82523d6000602084013e610466565b606091505b50509050806104c15760405162461bcd60e51b815260206004820152602160248201527f4661696c656420746f2073656e6420457468657220746f20746865206f776e656044820152603960f91b6064820152608401610133565b336001600160a01b03167f6ff886cace6e462ab8ad73a45889187d83dcf628f4466a704b685cc47b7b2fe587878787423460405161050496959493929190610c51565b60405180910390a250506001805550505050565b6000546001600160a01b031633146105725760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610133565b600081116105d25760405162461bcd60e51b815260206004820152602760248201527f4d696e696d756d207072696365206d7573742062652067726561746572207468604482015266616e207a65726f60c81b6064820152608401610133565b60038190556040518181527f3e2623694efe135193106e707cb90a0871bd82b3667d6e4eaf7c2d2888009d819060200160405180910390a150565b60606002805480602002602001604051908101604052809291908181526020016000905b828210156107b457838290600052602060002090600502016040518060a001604052908160008201805461066490610adf565b80601f016020809104026020016040519081016040528092919081815260200182805461069090610adf565b80156106dd5780601f106106b2576101008083540402835291602001916106dd565b820191906000526020600020905b8154815290600101906020018083116106c057829003601f168201915b505050505081526020016001820180546106f690610adf565b80601f016020809104026020016040519081016040528092919081815260200182805461072290610adf565b801561076f5780601f106107445761010080835404028352916020019161076f565b820191906000526020600020905b81548152906001019060200180831161075257829003601f168201915b5050509183525050600282015460208083019190915260038301546001600160a01b031660408301526004909201546060909101529082526001929092019101610631565b50505050905090565b6000546001600160a01b031633146108175760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610133565b6001600160a01b03811661087c5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610133565b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b60008083601f8401126108e957600080fd5b50813567ffffffffffffffff81111561090157600080fd5b60208301915083602082850101111561091957600080fd5b9250929050565b6000806000806040858703121561093657600080fd5b843567ffffffffffffffff8082111561094e57600080fd5b61095a888389016108d7565b9096509450602087013591508082111561097357600080fd5b50610980878288016108d7565b95989497509550505050565b60006020828403121561099e57600080fd5b5035919050565b6000815180845260005b818110156109cb576020818501810151868301820152016109af565b506000602082860101526020601f19601f83011685010191505092915050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015610a8b57603f19898403018552815160a08151818652610a38828701826109a5565b915050888201518582038a870152610a5082826109a5565b838a0151878b01526060808501516001600160a01b031690880152608093840151939096019290925250509386019390860190600101610a12565b509098975050505050505050565b600060208284031215610aab57600080fd5b81356001600160a01b0381168114610ac257600080fd5b9392505050565b634e487b7160e01b600052604160045260246000fd5b600181811c90821680610af357607f821691505b602082108103610b1357634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610b6357600081815260208120601f850160051c81016020861015610b405750805b601f850160051c820191505b81811015610b5f57828155600101610b4c565b5050505b505050565b815167ffffffffffffffff811115610b8257610b82610ac9565b610b9681610b908454610adf565b84610b19565b602080601f831160018114610bcb5760008415610bb35750858301515b600019600386901b1c1916600185901b178555610b5f565b600085815260208120601f198616915b82811015610bfa57888601518255948401946001909101908401610bdb565b5085821015610c185787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b608081526000610c6560808301888a610c28565b8281036020840152610c78818789610c28565b604084019590955250506060015294935050505056fea26469706673582212209fbc1b0c5f14e603b46577bb15982ec878006c2e756c69523d68adb7f6a9f3a764736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "buyCoffee(string,string)": {
+        "params": {
+          "_message": "A message for the owner. Requirements: - The donation amount must be at least the minimum coffee price. - The function is protected against reentrancy. Note: The donated ETH is immediately forwarded to the owner, so the contract       does not hold the funds. However, the donation is recorded in memos along with its amount.",
+          "_name": "The name of the supporter."
+        }
+      },
+      "getMemos()": {
+        "returns": {
+          "_0": "An array of Memo structs."
+        }
+      },
+      "getTotalDonations()": {
+        "returns": {
+          "_0": "The total donations."
+        }
+      },
+      "updateMinCoffeePrice(uint256)": {
+        "params": {
+          "_newPrice": "The new minimum price (in wei) required to buy a coffee."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "buyCoffee(string,string)": {
+        "notice": "Donate (buy a coffee) and leave a memo for the owner."
+      },
+      "constructor": {
+        "notice": "Constructor: Initializes the Ownable contract with `msg.sender`.         ReentrancyGuard is automatically initialized."
+      },
+      "getMemos()": {
+        "notice": "Retrieve all memos stored in the contract."
+      },
+      "getTotalDonations()": {
+        "notice": "Returns the total amount donated (in wei)."
+      },
+      "updateMinCoffeePrice(uint256)": {
+        "notice": "Allows the owner to update the minimum donation (coffee) price."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 77,
+        "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+        "label": "_status",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 146,
+        "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+        "label": "memos",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_array(t_struct(Memo)142_storage)dyn_storage"
+      },
+      {
+        "astId": 149,
+        "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+        "label": "minCoffeePrice",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 151,
+        "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+        "label": "totalDonations",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(Memo)142_storage)dyn_storage": {
+        "base": "t_struct(Memo)142_storage",
+        "encoding": "dynamic_array",
+        "label": "struct BuyMeACoffee.Memo[]",
+        "numberOfBytes": "32"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Memo)142_storage": {
+        "encoding": "inplace",
+        "label": "struct BuyMeACoffee.Memo",
+        "members": [
+          {
+            "astId": 133,
+            "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+            "label": "name",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 135,
+            "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+            "label": "message",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 137,
+            "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+            "label": "timestamp",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 139,
+            "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+            "label": "from",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address"
+          },
+          {
+            "astId": 141,
+            "contract": "contracts/BuyMeACoffee.sol:BuyMeACoffee",
+            "label": "amount",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "160"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
