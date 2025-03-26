@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useCallback, useState, useRef, useEffect } from "react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
-import { RainbowKitCustomConnectButton, FaucetButton } from "~~/components/scaffold-eth";
 import { hardhat } from "viem/chains";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
 
 export const Header = () => {
   const { targetNetwork } = useTargetNetwork();
@@ -14,7 +14,10 @@ export const Header = () => {
   // Burger-menu drawer state
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const burgerMenuRef = useRef<HTMLDivElement>(null);
-  useOutsideClick(burgerMenuRef, useCallback(() => setIsDrawerOpen(false), []));
+  useOutsideClick(
+    burgerMenuRef,
+    useCallback(() => setIsDrawerOpen(false), []),
+  );
 
   // Typewriter logic
   const fullText = "I'm a creator";
@@ -97,9 +100,7 @@ export const Header = () => {
       <div className="lg:hidden dropdown" ref={burgerMenuRef}>
         <label
           tabIndex={0}
-          className={`btn btn-ghost ${
-            isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"
-          }`}
+          className={`btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
           onClick={() => setIsDrawerOpen(prev => !prev)}
         >
           <Bars3Icon className="h-5 w-5" />

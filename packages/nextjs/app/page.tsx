@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { Address } from "../components/scaffold-eth";
+import deployedContracts from "../contracts/deployedContracts";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserProvider, Contract, formatEther, parseEther } from "ethers";
 import { AnimatePresence, motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 import { useAccount } from "wagmi";
-import { Address } from "../components/scaffold-eth";
-import deployedContracts from "../contracts/deployedContracts";
 
 // Extend the Window interface to include the ethereum property
 declare global {
@@ -552,34 +552,6 @@ export default function Home() {
           </div>
         )}
       </div>
-
-      {/* Full-View Modal for Selected Card */}
-      <AnimatePresence>
-        {selectedMemo && (
-          <ModalBackdrop initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={closeModal}>
-            <ModalContent
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              onClick={(e: React.MouseEvent) => e.stopPropagation()}
-            >
-              <button className="absolute top-2 right-3 text-gray-500 hover:text-gray-700" onClick={closeModal}>
-                ×
-              </button>
-              <h3 className="modal-title">{selectedMemo.name || "Anonymous"}</h3>
-              <p className="modal-subtitle">Message: {selectedMemo.message}</p>
-              <p className="modal-amount flex items-center gap-1">
-                <FontAwesomeIcon icon={faEthereum} />
-                {Number(formatEther(selectedMemo.amount || "0")).toFixed(6)} ETH
-              </p>
-              <p className="modal-time">{new Date(Number(selectedMemo.timestamp) * 1000).toLocaleString()}</p>
-              <div className="modal-from">
-                From: <Address address={selectedMemo.from} />
-              </div>
-            </ModalContent>
-          </ModalBackdrop>
-        )}
-      </AnimatePresence>
-    </>
-  );
+    </>
+  );
 }
