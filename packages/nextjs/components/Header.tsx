@@ -3,7 +3,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { hardhat } from "viem/chains";
-import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
 
@@ -43,20 +42,7 @@ export const Header = () => {
   }, [charIndex, fullText, typingSpeed, pauseDuration]);
 
   return (
-    <div
-      className="
-        sticky top-0
-        navbar
-        min-h-0
-        flex-shrink-0
-        justify-between
-        z-20
-        px-2
-        bg-transparent
-        backdrop-blur-md
-        shadow-md
-      "
-    >
+    <div className="sticky top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-2 bg-transparent backdrop-blur-md shadow-md">
       {/* Left side: Logo + typewriter text */}
       <div className="navbar-start flex-grow ml-4 flex items-center gap-3">
         {/* Responsive GIF Logo */}
@@ -72,19 +58,13 @@ export const Header = () => {
           />
         </div>
 
-        {/* Responsive Typewriter text using italic Pacifico font */}
+        {/* Typewriter text with Pacifico font */}
         <div
           className="
-            text-sm
-            sm:text-lg
-            md:text-xl
-            lg:text-2xl
-            xl:text-3xl
-            whitespace-nowrap
-            text-black
-            font-pacifico
-            font-bold
+            text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl
+            whitespace-nowrap text-black font-pacifico italic transition-all
           "
+          style={{ fontFamily: "'Pacifico', cursive", color: "#222222" }} // Ensure color is similar to the image
         >
           {typedText}
         </div>
@@ -96,23 +76,20 @@ export const Header = () => {
         {isLocalNetwork && <FaucetButton />}
       </div>
 
-      {/* Mobile Drawer (if you need to add mobile nav links) */}
+      {/* Mobile Drawer */}
       <div className="lg:hidden dropdown" ref={burgerMenuRef}>
         <label
           tabIndex={0}
           className={`btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
           onClick={() => setIsDrawerOpen(prev => !prev)}
-        >
-          <Bars3Icon className="h-5 w-5" />
-        </label>
+        ></label>
         {isDrawerOpen && (
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             onClick={() => setIsDrawerOpen(false)}
           >
-            {/* Add your mobile nav links here if needed */}
-            <li className="text-sm px-2">No links yet</li>
+            {/* Add mobile nav links here if needed */}
           </ul>
         )}
       </div>
