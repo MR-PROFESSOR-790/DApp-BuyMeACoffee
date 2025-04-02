@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.font-satisfy {
+  font-family: 'Satisfy', cursive;
+}
 :root,
 [data-theme] {
   background: oklch(var(--b2));
