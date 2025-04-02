@@ -62,7 +62,7 @@ export const Header = () => {
         {/* Responsive GIF Logo */}
         <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
           <Image
-            src="/logo-animation-unscreen.gif"
+            src="/logo-animation.gif"
             alt="Logo"
             fill
             style={{
