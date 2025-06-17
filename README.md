@@ -37,4 +37,4 @@ A decentralized application that allows creators to receive donations in cryptoc
 
 1. Clone the repository:
 ```bash
-git clone [https://github.com/yourusername/buy-me-a-coffee-dapp.git](https://github.com/MR-PROFESSOR-790/DApp-BuyMeACoffee/)
+git clone https://github.com/MR-PROFESSOR-790/DApp-BuyMeACoffee
